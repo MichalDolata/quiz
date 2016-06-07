@@ -39,21 +39,25 @@
         
         displayQuestion: function() {
             var question = this.questions[this.currentQuestion-1], i;
-            if(this.currentQuestion === 1) {
-                document.getElementById("question").innerHTML = question.question;
+            var questionDOM = document.getElementById("question");
+            var answersFormDOM = document.getElementById("answers-form");
+
+            function displayContent() {
+                questionDOM.innerHTML = question.question;
                 for(i = 0; i < 4; i++) {
                     document.getElementById("answer" + (i + 1)).innerHTML = question.answers[i];
                 }
+            }
+
+            if(this.currentQuestion === 1) {
+                displayContent();
             } else {
-                document.getElementById("question").classList.add("hidden");
-                document.getElementById("answers-form").classList.add("hidden");
+                questionDOM.classList.add("hidden");
+                answersFormDOM.classList.add("hidden");
                 setTimeout(function () {
-                    document.getElementById("question").innerHTML = question.question;
-                    for(i = 0; i < 4; i++) {
-                        document.getElementById("answer" + (i + 1)).innerHTML = question.answers[i];
-                    }
-                    document.getElementById("question").classList.remove("hidden");
-                    document.getElementById("answers-form").classList.remove("hidden");
+                    displayContent();
+                    questionDOM.classList.remove("hidden");
+                    answersFormDOM.classList.remove("hidden");
                 }, 500);
             }
             document.getElementById("bar").style.width = ((this.currentQuestion - 1) /
@@ -91,17 +95,19 @@
 
         displayResult: function() {
             var quiz = this;
-            document.getElementById("question").classList.add("hidden");
+            var questionDOM = document.getElementById("question");
+            var answersDOM = document.getElementById("answers");
+            questionDOM.classList.add("hidden");
             document.getElementById("answers-form").classList.add("hidden");
             setTimeout(function() {
-                document.getElementById("answers").innerHTML = "<span class=\"hidden\">" + quiz.points + " points</span>";
+                answersDOM.innerHTML = "<span class=\"hidden\">" + quiz.points + " points</span>";
                 document.getElementById("bar").style.width = "100%";
-                document.getElementById("question").innerHTML = "Your result:";
+                questionDOM.innerHTML = "Your result:";
                 document.getElementById("next").style.visibility = "hidden";
-                document.getElementById("question").classList.remove("hidden");
+                questionDOM.classList.remove("hidden");
             }, 500);
             setTimeout(function () {
-                document.getElementById("answers").getElementsByTagName("span")[0].classList.remove("hidden");
+                answersDOM.getElementsByTagName("span")[0].classList.remove("hidden");
             }, 600);
 
         }
