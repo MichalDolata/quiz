@@ -79,10 +79,10 @@
                 console.log("ERROR");
             } else {
                 if(answer == this.questions[this.currentQuestion-1].correctAnswer) {
-                    console.log("GOOD JOB");
                     this.points++;
+                    // good answer respond
                 } else {
-                    console.log("BAD JOB");
+                    // wrong answer respond
                 }
                 this.currentQuestion++;
                 if(this.currentQuestion <= this.questions.length) {
@@ -100,7 +100,8 @@
             questionDOM.classList.add("hidden");
             document.getElementById("answers-form").classList.add("hidden");
             setTimeout(function() {
-                answersDOM.innerHTML = "<span class=\"hidden\">" + quiz.points + " points</span>";
+                var points = quiz.points === 1 ? 'point' : 'points';
+                answersDOM.innerHTML = "<span class=\"hidden\">" + quiz.points + " " + points + "</span>";
                 document.getElementById("bar").style.width = "100%";
                 questionDOM.innerHTML = "Your result:";
                 document.getElementById("next").style.visibility = "hidden";
