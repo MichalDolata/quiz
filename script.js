@@ -23,18 +23,27 @@
                     quiz.nextQuestion();
                 }
             }
-            this.displayQuestion();
         },
 
         loadQuestions: function() {
-            this.questions.push(new Question("Question 1", ["answer1", "answer2",
-                "answer3", "answer4"], 1));
-            this.questions.push(new Question("Question 2", ["odpowiedz1", "odpowiedz2",
-                "odpowiedz3", "odpowiedz4"], 2));
-            this.questions.push(new Question("Question 3", ["answer1", "answer2",
-                "answer3", "answer4"], 3));
-            this.questions.push(new Question("Question 4", ["answer1", "answer2",
-                "answer3", "answer4"], 4));
+            var request = new XMLHttpRequest();
+            request.open('GET', "answers.json", true);
+            request.onreadystatechange = function() {
+                try {
+                    if(request.readyState === XMLHttpRequest.DONE) {
+                        if(request.status === 200) {
+                            var questions = JSON.parse(request.responseText);
+                            quiz.questions = questions;
+                            quiz.displayQuestion();
+                        } else {
+                            // TODO: error handle
+                        }
+                    }
+                } catch(e) {
+                    // TODO: error handle2
+                }
+            };
+            request.send(null);
         },
         
         displayQuestion: function() {

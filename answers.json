@@ -1,0 +1,22 @@
+[
+  {
+    "question":"Question 1",
+    "answers":["answer1","answer2","answer3","answer4"],
+    "correctAnswer":1
+  },
+  {
+    "question":"Question 2",
+    "answers":["odpowiedz1", "odpowiedz2","odpowiedz3","odpowiedz4"],
+    "correctAnswer":2
+  },
+  {
+    "question":"Question 3",
+    "answers":["answer1","answer2","answer3","answer4"],
+    "correctAnswer":3
+  },
+  {
+    "question":"Question 4",
+    "answers":["answer1","answer2","answer3","answer4"],
+    "correctAnswer":4
+  }
+]
