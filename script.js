@@ -2,11 +2,11 @@
  * Created by preb on 19.05.16.
  */
 (function(){
-    function Question(question, answers, correctAnswer) {
+    /*function Question(question, answers, correctAnswer) {
         this.question = question;
         this.answers = answers;
         this.correctAnswer = correctAnswer;
-    }
+    }*/
 
     var quiz = {
         questions: [],
@@ -36,16 +36,21 @@
                             quiz.questions = questions;
                             quiz.displayQuestion();
                         } else {
-                            // TODO: error handle
+                            quiz.displayError();
                         }
                     }
                 } catch(e) {
-                    // TODO: error handle2
+                    quiz.displayError();
                 }
             };
             request.send(null);
         },
-        
+
+        displayError: function() {
+            document.getElementById("answers-form").innerHTML = 'Something went wrong. Please refresh the page';
+            document.getElementById("next").style.visibility = "hidden";
+        },
+
         displayQuestion: function() {
             var question = this.questions[this.currentQuestion-1], i;
             var questionDOM = document.getElementById("question");
