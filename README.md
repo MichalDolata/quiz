@@ -6,4 +6,4 @@
 - JavaScript
 
 ## Live demo
-[Demo](http://dolata.me/demos/quiz/)
+[Demo](http://michaldolata.github.io/quiz/)
