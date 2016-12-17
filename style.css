@@ -1,7 +1,15 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; }
+
 #quiz {
+  box-sizing: border-box;
   width: 500px;
   border: 1px solid cadetblue;
-  font-family: "Ubuntu Light";
+  font-family: 'Open Sans', sans-serif;
   border-radius: 1px; }
   #quiz #question {
     width: 100%;
@@ -33,7 +41,7 @@
       background-color: cadetblue;
       color: white; }
       #quiz #navigation button:hover {
-        box-shadow: black 0px 0px 5px; }
+        box-shadow: black 0 0 5px; }
     #quiz #navigation #next {
       float: right; }
   #quiz #progress {
@@ -42,7 +50,7 @@
     #quiz #progress #bar {
       background-color: cadetblue;
       height: 100%;
-      width: 0%;
+      width: 0;
       transition: ease-out 1s; }
 
 .hidden {
