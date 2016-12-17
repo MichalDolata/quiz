@@ -1,22 +1,22 @@
 [
   {
-    "question":"Question 1",
-    "answers":["answer1","answer2","answer3","answer4"],
-    "correctAnswer":1
-  },
-  {
-    "question":"Question 2",
-    "answers":["odpowiedz1", "odpowiedz2","odpowiedz3","odpowiedz4"],
+    "question":"What color is cobalt?",
+    "answers":["Silver","Blue","Black","Yellow"],
     "correctAnswer":2
   },
   {
-    "question":"Question 3",
-    "answers":["answer1","answer2","answer3","answer4"],
+    "question":"Which planet is nearest the sun?",
+    "answers":["Uranus", "Venus", "Mercury","Jupiter"],
     "correctAnswer":3
   },
   {
-    "question":"Question 4",
-    "answers":["answer1","answer2","answer3","answer4"],
-    "correctAnswer":4
+    "question":"In what year was Google launched on the web?",
+    "answers":["1999","1998","2001","1996"],
+    "correctAnswer":2
+  },
+  {
+    "question":"Which country is the origin of the cocktail Mojito?",
+    "answers":["Cuba","Spain","USA","Brazil"],
+    "correctAnswer":1
   }
 ]
